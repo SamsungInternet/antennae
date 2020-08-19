@@ -1,0 +1,127 @@
+:root {
+    background-position: fixed;
+}
+
+main {
+    display: grid;
+    grid-template: 40vh auto 1fr 1fr/ 10vw 1fr 10vw;
+    gap: 2em 2em;
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+    align-content: space-around;
+    max-width: 80rem;
+    margin: auto; 
+}
+
+.ant-logo {
+    height: 8rem;
+    width: 8rem;
+    object-fit: contain;
+}
+
+.sec-installed {
+    grid-column: 2 / 3;
+    grid-row: 4 / 5;
+    justify-self: start;
+    width: 100%;
+}
+
+.sec-curated {
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
+    justify-self: start;
+    width: 100%;
+}
+
+.sec-header{ 
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+}
+
+.sec-search {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+}
+
+.section-icon-header {
+    height: 1.5rem;
+    margin: .1rem 1rem;
+}
+
+.app-title {
+    display: none;
+}
+
+.main-bubble-title {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: .5rem;;
+}
+
+.antennae-search-btn {
+    margin-left: 1rem;
+}
+
+.antennae-searchbox {
+    border: var(--app-accent) solid 3px;
+}
+
+.antennae-bubble {
+    width: 100%;
+    min-height: 8rem;
+}
+
+.wiggle-logo {
+    animation-duration: 1s;
+    animation-name: li-download;
+    animation-fill-mode: backwards;
+    animation-timing-function: ease-out;
+}
+
+.wiggle-logo:hover {
+    animation-duration: .5s;
+    animation-name: li-hover;
+    animation-fill-mode: backwards;
+    animation-timing-function: ease-in;
+}
+
+
+@keyframes li-download {
+    from{
+        transform: translate(0px, 0px);
+    }
+    to {
+        transform: translate(0px, 50px);
+    }
+}
+
+@keyframes li-hover {
+    from{
+        transform: translate(0px, 0px);
+    }
+    to {
+        transform: translate(0px, 20px);
+    }
+}
+
+
+
+@media (max-width: 450px) {
+    main {
+        grid-template: 40vh auto 1fr 1fr/1fr;
+    }
+    .sec-installed {
+        grid-column: 1 / -1;
+    }
+    
+    .sec-curated {
+        grid-column: 1 / -1;
+    }
+    
+    .sec-search {
+        grid-column: 1 / -1;
+    }
+}

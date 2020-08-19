@@ -1,0 +1,16 @@
+:root {
+    --app-accent: #7882FF;
+    background-color: #11151D;
+    
+    background: 
+    radial-gradient(circle at 130% 0%, rgba(120, 130, 255, .2), rgba(0,0,0,0) 40%),
+    radial-gradient(circle at -20% 90%, rgba(165, 199, 63, 0.2), rgba(0,0,0,0) 60%),
+    radial-gradient(circle at 100% 65%, rgba(36, 98, 192, 0.2), rgba(0,0,0,0) 60%),
+    radial-gradient(circle at 20% 50%, rgba(170, 8, 84, 0.2), rgba(0,0,0,0) 60%),
+    linear-gradient(to bottom right, #252525, #1b1b1b);
+    color: rgb(255, 240, 242);
+    height: 100vh;
+    width: 100vw;
+    
+}
+
