@@ -72,6 +72,18 @@ main {
 .antennae-bubble {
     width: 100%;
     min-height: 8rem;
+    display: flex;
+    justify-content: space-around;
+    flex-flow: row wrap;    
+}
+
+.antennae-card{
+    margin: auto;
+}
+
+.antennae-card h3{
+    padding-top: 0.3em;
+    padding-bottom: 0.3em;
 }
 
 .wiggle-logo {

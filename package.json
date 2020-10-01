@@ -1,0 +1,22 @@
+{
+  "name": "antennae",
+  "version": "1.0.0",
+  "description": "Project Antennae",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SamsungInternet/antennae.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SamsungInternet/antennae/issues"
+  },
+  "homepage": "https://github.com/SamsungInternet/antennae#readme",
+  "dependencies": {
+    "@11ty/eleventy": "^0.11.0"
+  }
+}
