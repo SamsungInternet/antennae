@@ -1,0 +1,24 @@
+---js
+{
+    layout: "template",
+    app: {
+        name: "Web Apps"
+    },
+    icon(data) {
+        console.log(data);
+    }
+}
+---
+
+<h1>{{ app.name }}</h1>
+
+<ul>
+{%- for app in apps -%}
+<li>
+    <figure>
+    <img src="{{ app[1] | appicon }}" alt="app icon" width="128" height="128" style="clip-path: url(#squircle);" />
+    <figcaption><a href="app/{{ app[1].name | slug }}/">{{ app[1].name }}</a></figcaption>
+    </figure> 
+</li>
+{%- endfor -%}
+</ul>

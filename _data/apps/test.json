@@ -1,0 +1,45 @@
+{
+
+    "baseurl": "https://samsunginternet.github.io/a-frame-demos/racer/",
+
+    "name": "A-Frame Racer",
+  
+    "shortname": "Racer",
+  
+    "icons": [
+  
+      {
+  
+        "src": "/a-frame-demos/racer/icon512.png",
+  
+        "sizes": "192x192",
+  
+        "type": "image/png"
+  
+      },
+  
+      {
+  
+        "src": "/a-frame-demos/racer/icon192.png",
+  
+        "sizes": "192x192",
+  
+        "type": "image/png"
+  
+      }
+  
+    ],
+  
+    "start_url": "/a-frame-demos/racer/",
+  
+    "display": "standalone",
+  
+    "orientation": "landscape",
+  
+    "background_color": "white",
+  
+    "theme_color": "#8953D8"
+  
+  }
+  
+  
