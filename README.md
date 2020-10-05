@@ -3,13 +3,14 @@ Project Antennae
 
 ## Building
 
-```
+```bash
 npm install
 npm run build
 ```
 
 ## Developing
-```
+
+```bash
 npm install
 npm run serve
 ```
