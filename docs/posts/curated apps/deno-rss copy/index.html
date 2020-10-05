@@ -1,0 +1,23 @@
+<p>const fetch = require(&quot;node-fetch&quot;);</p>
+<p>const html = String.raw;</p>
+<p>class post {
+async data() {
+const data = await fetch(
+&quot;https://deno-rss.glitch.me/manifest.json&quot;
+).then((r) =&gt; r.json());</p>
+<pre><code>	data.baseurl = &quot;https://deno-rss.glitch.me/&quot;;
+	data.tags = ['app'];
+	data.template = 'default';
+
+	return data;
+}
+
+render(manifest) {
+	return html`
+		&lt;h1&gt;&lt;a href=&quot;${new URL(manifest.starturl, manifest.baseurl).href}&quot;&gt;${manifest.name}&lt;/a&gt;&lt;/h1&gt;
+		&lt;p&gt;This app is for reading RSS feeds.&lt;/p&gt;
+	`;
+}
+</code></pre>
+<p>}
+module.exports = post;</p>

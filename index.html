@@ -1,11 +1,8 @@
----js
+---json
 {
-    layout: "template",
-    app: {
-        name: "Web Apps"
-    },
-    icon(data) {
-        console.log(data);
+    "layout": "default",
+    "app": {
+        "name": "Web Apps"
     }
 }
 ---
@@ -29,11 +26,11 @@
         <h2>Curated apps</h2>
     </header>
     <div class="oui-bubble antennae-bubble">
-        {%- for app in apps -%}
-        <figure>
-        <img src="{{ app[1] | appicon }}" alt="app icon" width="128" height="128" style="clip-path: url(#squircle);" />
-        <figcaption><a href="app/{{ app[1].name | slug }}/">{{ app[1].name }}</a></figcaption>
-        </figure> 
+        {%- for app in collections.app -%}
+        <a href="{{ app.url }}"><figure>
+        <img src="{{ app.data | appicon }}" alt="app icon" width="128" height="128" style="clip-path: url(#squircle);" />
+        <figcaption>{{ app.data.name }}</figcaption>
+        </figure></a>
         {%- endfor -%}
     </div>
 </section>
