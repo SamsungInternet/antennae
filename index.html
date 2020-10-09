@@ -1,0 +1,36 @@
+---json
+{
+    "layout": "default",
+    "app": {
+        "name": "Web Apps"
+    }
+}
+---
+
+<section class="sec-search">
+    <input type="text" class="oui-input-textual">
+    <input type="button" value="Search" class="oui-button oui-button--active antennae-search-btn">
+</section>
+<section class="sec-installed">
+    <header class="main-bubble-title">
+        <svg class="section-icon-header" viewBox="0 0 29 32" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="1.5"><g fill="none" stroke="var(--text)"><path d="M27.199 17.889v-4.623a2.97 2.97 0 00-2.969-2.969H4.148a2.971 2.971 0 00-2.969 2.969v13.855a2.97 2.97 0 002.969 2.969h10.781" stroke-width="2.36"/><path d="M4.739 10.297a7.565 7.565 0 017.401-9.118 7.565 7.565 0 017.4 9.118" stroke-width="2.36"/><path d="M9.346 10.297a6.962 6.962 0 016.893-7.91 6.96 6.96 0 016.892 7.91" stroke-width="2.36"/><g stroke-width="2.12"><path d="M19.114 30.306h8.394M19.058 24.179l4.218 4.586 4.299-4.586-4.299 4.586V19.68"/></g></g></svg>
+        <h2>My installed apps</h2>
+    </header>
+    <div class="oui-bubble antennae-bubble">
+        here are my installed apps
+    </div>
+</section>
+<section class="sec-curated">
+    <header class="main-bubble-title">
+        <svg class="section-icon-header" viewBox="0 0 28 27" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2"><path d="M12.079 1.202a2.06 2.06 0 013.745 0l3.029 6.615 7.227.836a2.061 2.061 0 011.157 3.563l-5.355 4.924 1.438 7.132a2.06 2.06 0 01-3.03 2.201l-6.339-3.571-6.338 3.571a2.058 2.058 0 01-3.03-2.201l1.438-7.132-5.355-4.924a2.06 2.06 0 011.157-3.563l7.227-.836 3.029-6.615zm1.722.789a.165.165 0 01.15-.096c.065 0 .124.037.151.096l3.028 6.615a1.894 1.894 0 001.505 1.093l7.227.837a.165.165 0 01.093.285L20.6 15.746a1.893 1.893 0 00-.575 1.769l1.438 7.131a.168.168 0 01-.065.167.164.164 0 01-.178.01l-6.338-3.572a1.898 1.898 0 00-1.861 0l-6.338 3.572a.164.164 0 01-.178-.01.166.166 0 01-.065-.167l1.438-7.131a1.893 1.893 0 00-.575-1.769l-5.355-4.925a.165.165 0 01.093-.285l7.227-.837a1.894 1.894 0 001.505-1.093l3.028-6.615z" fill="var(--text)"/></svg>
+        <h2>Curated apps</h2>
+    </header>
+    <div class="oui-bubble antennae-bubble">
+        {%- for app in collections.app -%}
+        <a href="{{ app.url }}"><figure>
+        <img src="{{ app.data | appicon }}" alt="app icon" width="128" height="128" style="clip-path: url(#squircle);" />
+        <figcaption>{{ app.data.name }}</figcaption>
+        </figure></a>
+        {%- endfor -%}
+    </div>
+</section>
