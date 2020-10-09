@@ -2,7 +2,7 @@
     background-position: fixed;
 }
 
-main {
+body {
     display: grid;
     grid-template: 40vh auto 1fr 1fr/ 10vw 1fr 10vw;
     gap: 2em 2em;
@@ -12,6 +12,10 @@ main {
     align-content: space-around;
     max-width: 80rem;
     margin: auto; 
+}
+
+main {
+    display: contents;
 }
 
 .ant-logo {
@@ -72,6 +76,18 @@ main {
 .antennae-bubble {
     width: 100%;
     min-height: 8rem;
+    display: flex;
+    justify-content: space-around;
+    flex-flow: row wrap;    
+}
+
+.antennae-card{
+    margin: auto;
+}
+
+.antennae-card h3{
+    padding-top: 0.3em;
+    padding-bottom: 0.3em;
 }
 
 .wiggle-logo {
