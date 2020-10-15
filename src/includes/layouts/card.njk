@@ -1,10 +1,15 @@
 {% extends "base.njk" %}
 
 {% block content %}
+
     <div class="antennae-card" >
-            {{ content | safe }}
+            {{ title }}
+            
             <img src="../images/icn_goals_colored.png" alt="global goal"/>
-            <h3>{{ title }}</h3>
+            
             <p class="oui-image-cover-caption">A PWA for goodos</p>
+            {% for app in collections.apps %}
+               <p> {{ app.data.title }}</p>
+            {% endfor %}
     </div>
  {% endblock content %}   
