@@ -1,6 +1,8 @@
 module.exports = function (eleventyConfig) {
 
-    eleventyConfig.setTemplateFormats("html,11ty.js,md,njk");
+	eleventyConfig.addPassthroughCopy("images");
+    eleventyConfig.addPassthroughCopy("styles");
+	eleventyConfig.setTemplateFormats("html,11ty.js,md,njk");
 
 	eleventyConfig.addFilter("appicon", function (value) {
         const data = value.data || Array.isArray(value) ? value[1] : value;
@@ -16,8 +18,11 @@ module.exports = function (eleventyConfig) {
     });
     
     return {
+		passthroughFileCopy: true,
         dir: {
-            output: "docs"
+			input: "src",
+			output: "docs",
+			includes: "_includes"
         }
     }
 };
