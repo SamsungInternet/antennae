@@ -1,0 +1,1 @@
+export default [["RSS Reader","RSS Reader This the app description for this test app.","/antennae/curated apps/deno-rss/"],["A-Frame Racer","A-Frame Racer This the app description for this test app.","/antennae/curated apps/racer/"]];

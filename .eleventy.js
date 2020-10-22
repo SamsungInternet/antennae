@@ -36,6 +36,7 @@ function appIcon(value) {
 
 module.exports = function (eleventyConfig) {
 	eleventyConfig.addPassthroughCopy("images");
+	eleventyConfig.addPassthroughCopy("scripts");
 	eleventyConfig.addPassthroughCopy("styles");
 	eleventyConfig.setTemplateFormats("html,11ty.js,md,njk,json");
 

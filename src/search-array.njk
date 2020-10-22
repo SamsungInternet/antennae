@@ -1,0 +1,15 @@
+---
+permalink: /scripts/search-array.js
+---
+export default [{% 
+ for app in collections.app 
+ %}{% 
+ set data = app.data 
+ %}["{{ 
+	 data.name
+ }}","{{ 
+	 app | excerpt
+ }}","{{ 
+	 app.url | url 
+}}"]{{ '' if loop.last else ',' }}{% 
+endfor  %}];
