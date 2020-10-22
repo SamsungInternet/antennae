@@ -1,0 +1,12 @@
+---
+permalink: /search-index.json
+---
+[
+{% for app in collections.app  %}{% set data = app.data %}{
+	"title": "{{ data.name }}",
+	"description": "{{ app | excerpt }}",
+	"icon": "{{ data | appicon | url }}",
+	"page_url": "{{ app.url | url }}",
+	"url": "{{ data.baseurl }}"
+}{{ '' if loop.last else ',' }}
+{% endfor  %}]
