@@ -17,7 +17,8 @@ module.exports = function (eleventyConfig) {
 		return value;
     });
     
-    return {
+	return {
+		pathPrefix: '/antennae/',
 		passthroughFileCopy: true,
         dir: {
 			input: "src",
