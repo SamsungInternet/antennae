@@ -150,6 +150,11 @@ main {
 	text-decoration: underline;
 }
 
+li[role="option"][aria-selected="true"] {
+	color: var(--on-primary);
+	background-color: var(--app-accent);
+}
+
 [role="combobox"] > ul > li:not(li:last-child) {
 	border-bottom-width: 0;
 }
