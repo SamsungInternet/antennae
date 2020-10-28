@@ -104,6 +104,65 @@ main {
     animation-timing-function: ease-in;
 }
 
+[role="combobox"] {
+	position: relative;
+	display: inline-flex;
+	align-items: center;
+}
+
+[role="combobox"] > label {
+	font-size: 1rem;
+	left: 24px;
+	top: 0;
+	position: absolute;
+	pointer-events: none;
+	transform: translateY(16px);
+	transform-origin: 0 0;
+	transition: transform 0.1s ease-in;
+}
+
+[role="combobox"] > input:valid + label,
+[role="combobox"] > input:focus + label {
+	transform: scale(0.7);
+}
+
+[role="combobox"] > ul {
+	position: absolute;
+	top: 100%;
+	margin-left: 24px;
+	z-index: 10;
+}
+
+[role="combobox"] > ul > li {
+	height: 48px;
+	white-space: nowrap;
+	background-color: var(--textual-background);
+	display: inline-flex;
+	align-items: center;
+	padding: 0 24px;
+	min-width: 100%;
+	border: 1px solid var(--border-surface);
+	white-space: pre;
+}
+
+[role="combobox"] > ul > li > b {
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+li[role="option"][aria-selected="true"] {
+	color: var(--on-primary);
+	background-color: var(--app-accent);
+}
+
+[role="combobox"] > ul > li:not(li:last-child) {
+	border-bottom-width: 0;
+}
+
+[role="combobox"] > ul > li:hover {
+	color: var(--primary);
+	cursor: pointer;
+}
 
 @keyframes li-download {
     from{

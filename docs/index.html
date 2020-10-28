@@ -21,10 +21,15 @@
 
     <main>
     
-<section class="sec-search">
-    <input type="text" class="oui-input-textual">
-    <input type="button" value="Search" class="oui-button oui-button--active antennae-search-btn">
-</section>
+<form class="sec-search" action="/search/">
+	<div role="combobox" aria-expanded="false" aria-owns="search-listbox" aria-haspopup="listbox" id="search">
+		<input type="text" name="search" autocomplete="off" required class="oui-input-textual" aria-autocomplete="list" aria-controls="search-listbox" aria-labelledby="search-label" id="search-input" aria-activedescendant="">
+		<label id="search-label">Search</label>
+		<ul aria-labelledby="search-label" role="listbox" id="search-listbox"></ul>
+	</div>
+	<input type="button" value="Search" class="oui-button oui-button--active antennae-search-btn">
+</form>
+<script type="module" src="/antennae/scripts/search.js"></script>
 <section class="sec-installed">
     <header class="main-bubble-title">
         <svg class="section-icon-header" viewBox="0 0 29 32" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="1.5"><g fill="none" stroke="var(--text)"><path d="M27.199 17.889v-4.623a2.97 2.97 0 00-2.969-2.969H4.148a2.971 2.971 0 00-2.969 2.969v13.855a2.97 2.97 0 002.969 2.969h10.781" stroke-width="2.36"/><path d="M4.739 10.297a7.565 7.565 0 017.401-9.118 7.565 7.565 0 017.4 9.118" stroke-width="2.36"/><path d="M9.346 10.297a6.962 6.962 0 016.893-7.91 6.96 6.96 0 016.892 7.91" stroke-width="2.36"/><g stroke-width="2.12"><path d="M19.114 30.306h8.394M19.058 24.179l4.218 4.586 4.299-4.586-4.299 4.586V19.68"/></g></g></svg>
