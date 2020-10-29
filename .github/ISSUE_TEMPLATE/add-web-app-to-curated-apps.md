@@ -7,9 +7,12 @@ assignees: AdaRoseCannon, lauramorinigo
 
 ---
 
+---
 App name: [App name]
 Contact Email: [example@email.com]
 Manifest: [https://example.com/manifest.json]
+Tags: uncategorised
+
 ---
 
 ## My special App
