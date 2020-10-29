@@ -38,7 +38,7 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addPassthroughCopy("images");
 	eleventyConfig.addPassthroughCopy("scripts");
 	eleventyConfig.addPassthroughCopy("styles");
-	eleventyConfig.setTemplateFormats("html,11ty.js,md,njk,json");
+	eleventyConfig.setTemplateFormats("html,11ty.js,md,njk");
 
 	eleventyConfig.addFilter("appicon", appIcon);
 	eleventyConfig.addFilter("excerpt", extractExcerpt);

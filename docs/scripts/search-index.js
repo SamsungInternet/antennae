@@ -12,5 +12,12 @@ export default {
 	"icon": "https://samsunginternet.github.io/a-frame-demos/racer/icon512.png",
 	"page_url": "/antennae/curated apps/racer/",
 	"url": "https://samsunginternet.github.io/a-frame-demos/racer/"
+},
+"Twitter":{
+	"title": "Twitter",
+	"description": "Twitter Description of Twitter",
+	"icon": "https://abs.twimg.com/responsive-web/client-web-legacy/icon-default-large.67500505.png",
+	"page_url": "/antennae/curated apps/Twitter/",
+	"url": "https://twitter.com/"
 }
 };
