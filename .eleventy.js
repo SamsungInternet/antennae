@@ -1,4 +1,7 @@
 const striptags = require("striptags");
+const sharp = require("sharp");
+const fs = require("fs");
+const fetch = require("node-fetch");
 
 function extractExcerpt(article) {
 	if (!article.hasOwnProperty("templateContent")) {
@@ -16,14 +19,12 @@ function extractExcerpt(article) {
 		.replace(/\n/g, " ")
 		.trim();
 	
-	console.log(excerpt);
-	
 	return excerpt;
 }
 
-function appIcon(value) {
+async function appIcon(value) {
 	const data = value.data || Array.isArray(value) ? value[1] : value;
-	return new URL(
+	const iconurl = new URL(
 		data.icons.sort(function (a, b) {
 			const aN = Number(a.sizes.split("x")[0]);
 			const bN = Number(b.sizes.split("x")[0]);
@@ -31,7 +32,30 @@ function appIcon(value) {
 		})[0].src,
 		data.baseurl
 	).href;
-	return value;
+
+	if (!iconurl) {
+		throw Error('Could not find icon in manifest')
+	}
+
+	const filename = iconurl.replace(/[^a-z0-9\-]/gi, "_") + '.png';
+	const pathname = '/images/icon-cache/' + filename;
+	const localPath = __dirname + '/docs' + pathname;
+
+	if (fs.existsSync(localPath)) {
+		return pathname;
+	}
+
+	const imageBuffer = await fetch(iconurl)
+		.then(response => response.buffer());
+
+	await sharp(imageBuffer)
+	.resize(400,400,{
+		fit: sharp.fit.inside,
+		withoutEnlargement: true
+	})
+	.toFile(localPath);
+	
+	return pathname;
 }
 
 module.exports = function (eleventyConfig) {
@@ -40,7 +64,12 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addPassthroughCopy("styles");
 	eleventyConfig.setTemplateFormats("html,11ty.js,md,njk");
 
-	eleventyConfig.addFilter("appicon", appIcon);
+	eleventyConfig.addNunjucksAsyncFilter("appicon", function (value, callback) {
+		appIcon(value)
+		.then(path => {
+			callback(null, path);
+		});
+	});
 	eleventyConfig.addFilter("excerpt", extractExcerpt);
 
 	return {
